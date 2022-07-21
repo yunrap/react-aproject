@@ -12,7 +12,7 @@
  *  2022.07.17.  yunrap  최초작성
  */
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import palette from "../../lib/styles/palette";
 const StyledButton = styled.button`
   border: none;
@@ -28,6 +28,25 @@ const StyledButton = styled.button`
   &:hover {
     background: ${palette.gray[6]};
   }
+
+  ${(props) =>
+    props.fullWidth &&
+    css`
+      padding-top: 0.75rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      width: 100%;
+      font-size: 1.125rem;
+    `}
+
+  ${(props) =>
+    props.cyan &&
+    css`
+      background: ${palette.cyan[5]};
+      &:hover {
+        background: ${palette.cyan[4]};
+      }
+    `}
 `;
 
 export default function Button(props) {
