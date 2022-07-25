@@ -40,6 +40,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const { sample_action } = authSlice.actions;
+export const { sample_action, initialize_form } = authSlice.actions;
 
 export default authSlice.reducer;

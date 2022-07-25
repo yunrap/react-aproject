@@ -14,20 +14,17 @@
 
 import React, { useEffect } from "react";
 import AuthForm from "../../components/auth/AuthForm";
+import { initialize_form } from "../../modules/auth";
 import { useDispatch } from "react-redux";
 
-const onChange = (e) => {
-  const { name, value } = e.target;
-  console.log(name);
-  console.log(value);
-};
-
-useEffect(() => {
-  dispatch(initial);
-}, [dispatch]);
-
 const LoginForm = () => {
-  return <AuthForm type="login" onChange={onChange}></AuthForm>;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initialize_form);
+  }, [dispatch]);
+
+  return <AuthForm type="login"></AuthForm>;
 };
 
 export default LoginForm;

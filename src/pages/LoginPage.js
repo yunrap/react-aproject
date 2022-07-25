@@ -23,7 +23,7 @@ export default function LoginPage() {
 
   return (
     <AuthTemplate>
-      <LoginForm onChange={onChange} type="login"></LoginForm>
+      <LoginForm></LoginForm>
     </AuthTemplate>
   );
 }
