@@ -13,11 +13,17 @@
  */
 
 import AuthTemplate from "../components/auth/AuthTemplate";
-import AuthForm from "../components/auth/AuthForm";
+import LoginForm from "../containers/auth/LoginForm";
 export default function LoginPage() {
+  const onChange = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+    console.log(name);
+  };
+
   return (
     <AuthTemplate>
-      <AuthForm type="login"></AuthForm>
+      <LoginForm onChange={onChange} type="login"></LoginForm>
     </AuthTemplate>
   );
 }

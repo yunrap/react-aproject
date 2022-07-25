@@ -60,7 +60,7 @@ const textMap = {
   register: "회원가입",
 };
 
-export default function AuthForm({ type }) {
+export default function AuthForm({ type, onChange }) {
   const text = textMap[type];
   return (
     <AuthFormBlock>
@@ -70,6 +70,7 @@ export default function AuthForm({ type }) {
           autoComplete="username"
           name="username"
           placeholder="아이디"
+          onChange={onChange}
         ></StyledInput>
         <StyledInput
           autoComplete="new-password"

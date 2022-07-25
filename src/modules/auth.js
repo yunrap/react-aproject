@@ -14,7 +14,17 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+const initialState = {
+  register: {
+    username: "",
+    password: "",
+    passwordConfirm: "",
+  },
+  login: {
+    username: "",
+    password: "",
+  },
+};
 
 export const authSlice = createSlice({
   name: "auth",
@@ -23,6 +33,10 @@ export const authSlice = createSlice({
     sample_action: (state) => {
       state.action = "auth/SAMPLE_ACTION";
     },
+    initialize_form: (state, { payload: form }) => ({
+      ...state,
+      [form]: initialState(form),
+    }),
   },
 });
 
